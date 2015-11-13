@@ -55,4 +55,17 @@ public class NumberDisplay
     public int getValue(){
         return valor;
     }
+    
+    /**
+     * Metodo que incrementa de uno en uno el valor fijado.
+     */
+    public void increment(){
+        // Si el valor fijado es menor que el limite fijado menos 1 (seria el anterior) entonces incrementariamos en 1, sino lo reseteamos a 0
+        if(valor < limite - 1){
+            valor +=1;
+        }
+        else{
+            valor = 0;
+        }
+    }
 }
