@@ -49,4 +49,10 @@ public class NumberDisplay
         }
         return digitos;
     }
+     /**
+      * Metodo que simplemente devuelve el valor fijado.
+      */
+    public int getValue(){
+        return valor;
+    }
 }
