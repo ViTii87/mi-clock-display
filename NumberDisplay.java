@@ -21,4 +21,19 @@ public class NumberDisplay
         limite = limiteDisplay;
     }
 
+    
+    /**
+     * Metodo que nos permitira fijar el valor de nuestro display.
+     */
+    public void setValue(int valorDisplay){
+        // Si el valor pasado como parametro es menor o igual que el limite establecido en el constructor entonces le asignamos al atributo el valor introducido.
+        if(valorDisplay <= limite){
+            valor = valorDisplay;
+        }
+        else{
+            // Si el valor introducido es mas grande que el limite entonces indicamos al usuario un mensaje de error.
+            System.out.println("El valor introducido:" + valorDisplay + " se sale del limite del display:" + limite);
+        }
+        
+    }
 }
