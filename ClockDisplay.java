@@ -19,9 +19,10 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
+        // Fijamos mediante el metodo setValue de la clase NumberDisplay la hora por defecto a 0.
         horas.setValue(0);
+        // Lo mismo con los minutos.
         minutos.setValue(0);      
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -29,9 +30,10 @@ public class ClockDisplay
      */
     public ClockDisplay(int hora, int minuto)
     {
+        // Fijamos mediante el metodo setValue de la clase NumberDisplay la hora introducida como parametro.
         horas.setValue(hora);
+        // Lo mismo con los minutos.
         minutos.setValue(minuto);
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -39,9 +41,10 @@ public class ClockDisplay
      */
     public void setTime(int horaNueva, int minutoNuevo)
     {
+        // Fijamos mediante el metodo setValue de la clase NumberDisplay la hora introducida como parametro.
         horas.setValue(horaNueva);
+        // Lo mismo con los minutos.
         minutos.setValue(minutoNuevo);
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -49,7 +52,10 @@ public class ClockDisplay
      */
     public String getTime()
     {
-        return horaFinal;  
+        // Primero creamos nuestro String de 5 digitos obteniendo los valores de cada display mediante el metodo getDisplayValue de la clase NumberDisplay.
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        // Ahora devolvemos el String con la hora correctamente fiajda.
+        return horaFinal; 
     }
     
     /**
@@ -57,10 +63,11 @@ public class ClockDisplay
      */
     public void timeTick()
     {
+        // Incrementamos los minutos llamando a el metodo increment de la clase NumberDisplay.
         minutos.increment();
+        // Obtengo los minutos mediante un metodo de la clase NumberDisplay y si son igual a 0 quiere decir que tenemos que incrementar una hora.
         if( minutos.getValue() == 0) {
             horas.increment();
         }
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
 }
