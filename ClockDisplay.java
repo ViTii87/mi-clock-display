@@ -23,5 +23,15 @@ public class ClockDisplay
         minutos.setValue(0);      
         horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
+    
+    /**
+     * Constructor que crea un reloj con las horas y minutos pasados como parametros
+     */
+    public ClockDisplay(int hora, int minuto)
+    {
+        horas.setValue(hora);
+        minutos.setValue(minuto);
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+    }
 
 }

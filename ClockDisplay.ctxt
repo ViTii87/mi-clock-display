@@ -2,4 +2,7 @@
 comment0.params=
 comment0.target=ClockDisplay()
 comment0.text=\r\n\ Constructor\ para\ crear\ un\ reloj\ con\ las\ horas\ y\ minutos\ fijadas\ a\ 0\r\n
-numComments=1
+comment1.params=hora\ minuto
+comment1.target=ClockDisplay(int,\ int)
+comment1.text=\r\n\ Constructor\ que\ crea\ un\ reloj\ con\ las\ horas\ y\ minutos\ pasados\ como\ parametros\r\n
+numComments=2
