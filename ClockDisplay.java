@@ -33,5 +33,16 @@ public class ClockDisplay
         minutos.setValue(minuto);
         horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
-
+    
+    /**
+     * Metodo para fijar el tiempo del reloj pasandole como parametros la hora y los minutos
+     */
+    public void setTime(int horaNueva, int minutoNuevo)
+    {
+        horas.setValue(horaNueva);
+        minutos.setValue(minutoNuevo);
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+    }
+    
+    
 }
