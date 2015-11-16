@@ -22,7 +22,9 @@ public class ClockDisplay
         // Fijamos mediante el metodo setValue de la clase NumberDisplay la hora por defecto a 0.
         horas.setValue(0);
         // Lo mismo con los minutos.
-        minutos.setValue(0);      
+        minutos.setValue(0);
+        // Fijamos nuestro String de 5 digitos con la hora y los minutos que dicta el constructor.
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -34,6 +36,8 @@ public class ClockDisplay
         horas.setValue(hora);
         // Lo mismo con los minutos.
         minutos.setValue(minuto);
+        // Fijamos nuestro String de 5 digitos con la hora y los minutos pasados como parametros del constructor.
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -45,6 +49,8 @@ public class ClockDisplay
         horas.setValue(horaNueva);
         // Lo mismo con los minutos.
         minutos.setValue(minutoNuevo);
+        // Fijamos nuestro String de 5 digitos con la hora y los minutos pasados como parametros del metodo.
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -69,5 +75,7 @@ public class ClockDisplay
         if( minutos.getValue() == 0) {
             horas.increment();
         }
+        // Actualizamos nuestro String despues de haber aplicado las operaciones.
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
 }
