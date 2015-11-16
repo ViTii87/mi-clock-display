@@ -44,5 +44,11 @@ public class ClockDisplay
         horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
-    
+    /**
+     * Metodo para mostrar un String que contendra la hora final de 5 digitos.
+     */
+    public String getTime()
+    {
+        return horaFinal;  
+    }
 }
