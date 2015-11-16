@@ -7,7 +7,8 @@
  */
 public class ClockDisplay
 {
-    
+    private NumberDisplay horas;
+    private NumberDisplay minutos;
 
     /**
      * Constructor for objects of class ClockDisplay
