@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ClockDisplay()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ClockDisplay\r\n
+comment0.text=\r\n\ Constructor\ para\ crear\ un\ reloj\ con\ las\ horas\ y\ minutos\ fijadas\ a\ 0\r\n
 numComments=1

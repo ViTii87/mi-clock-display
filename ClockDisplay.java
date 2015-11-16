@@ -8,18 +8,20 @@
 public class ClockDisplay
 {
     // Atributo de tipo NumberDisplay para las horas
-    private NumberDisplay horas;
+    private NumberDisplay horas = new NumberDisplay(24);
     // Atributo de tipo NumberDisplay para los minutos
-    private NumberDisplay minutos;
+    private NumberDisplay minutos = new NumberDisplay(60);
     // Atributo de tipo String para guardar la hora completa.
     private String horaFinal;
-
+    
     /**
-     * Constructor for objects of class ClockDisplay
+     * Constructor para crear un reloj con las horas y minutos fijadas a 0
      */
     public ClockDisplay()
     {
-        
+        horas.setValue(0);
+        minutos.setValue(0);      
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
 
 }
