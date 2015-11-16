@@ -51,4 +51,16 @@ public class ClockDisplay
     {
         return horaFinal;  
     }
+    
+    /**
+     * Metodo para avanzar un minuto en nuestro reloj.
+     */
+    public void timeTick()
+    {
+        minutos.increment();
+        if( minutos.getValue() == 0) {
+            horas.increment();
+        }
+        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+    }
 }
