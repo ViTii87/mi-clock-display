@@ -17,4 +17,6 @@ comment4.text=\r\n\ Metodo\ para\ avanzar\ un\ minuto\ en\ nuestro\ reloj.\r\n
 comment5.params=horaNueva
 comment5.target=void\ horaBuena(int)
 comment5.text=\r\n\ Metodo\ para\ dejar\ la\ hora\ en\ el\ formato\ correcto\r\n
-numComments=6
+comment6.params=formato
+comment6.target=void\ alternarHora(boolean)
+numComments=7

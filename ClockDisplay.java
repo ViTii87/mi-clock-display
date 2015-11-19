@@ -128,4 +128,8 @@ public class ClockDisplay
             horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
         }
     }
+    
+    public void alternarHora(boolean formato){
+       horaBuena(horas.getValue());
+    }
 }
