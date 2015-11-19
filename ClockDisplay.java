@@ -13,6 +13,8 @@ public class ClockDisplay
     private NumberDisplay minutos = new NumberDisplay(60);
     // Atributo de tipo String para guardar la hora completa.
     private String horaFinal;
+    // Atributo que usaremos para comprobar si estamos en las primeras 12 horas o las segundas
+    private boolean bandera;
     
     /**
      * Constructor para crear un reloj con las horas y minutos fijadas a 0
@@ -23,8 +25,8 @@ public class ClockDisplay
         horas.setValue(0);
         // Lo mismo con los minutos.
         minutos.setValue(0);
-        // Fijamos nuestro String de 5 digitos con la hora y los minutos que dicta el constructor.
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        // Llamamos a nuestro metodo para dejar la hora en el formato correcto.
+        horaBuena(horas.getValue());
     }
     
     /**
@@ -36,8 +38,8 @@ public class ClockDisplay
         horas.setValue(hora);
         // Lo mismo con los minutos.
         minutos.setValue(minuto);
-        // Fijamos nuestro String de 5 digitos con la hora y los minutos pasados como parametros del constructor.
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        // Llamamos a nuestro metodo para dejar la hora en el formato correcto.
+        horaBuena(hora);
     }
     
     /**
@@ -45,12 +47,11 @@ public class ClockDisplay
      */
     public void setTime(int horaNueva, int minutoNuevo)
     {
-        // Fijamos mediante el metodo setValue de la clase NumberDisplay la hora introducida como parametro.
-        horas.setValue(horaNueva);
-        // Lo mismo con los minutos.
+        // Fijamos mediante el metodo setValue de la clase NumberDisplay los minutos pasados como parametro.
         minutos.setValue(minutoNuevo);
-        // Fijamos nuestro String de 5 digitos con la hora y los minutos pasados como parametros del metodo.
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        // Llamamos a nuestro metodo para dejar la hora en el formato correcto, le pasamos las horas como parametro.
+        horaBuena(horaNueva);
+       
     }
     
     /**
@@ -58,8 +59,6 @@ public class ClockDisplay
      */
     public String getTime()
     {
-        // Primero creamos nuestro String de 5 digitos obteniendo los valores de cada display mediante el metodo getDisplayValue de la clase NumberDisplay.
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
         // Ahora devolvemos el String con la hora correctamente fiajda.
         return horaFinal; 
     }
@@ -74,8 +73,45 @@ public class ClockDisplay
         // Obtengo los minutos mediante un metodo de la clase NumberDisplay y si son igual a 0 quiere decir que tenemos que incrementar una hora.
         if( minutos.getValue() == 0) {
             horas.increment();
+            if(horas.getValue() == 12 && bandera==false){
+                horas.setValue(0);
+            }
         }
-        // Actualizamos nuestro String despues de haber aplicado las operaciones.
-        horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        // Actualizamos nuestro String despues de haber aplicado las operaciones en el formato correcto.
+        horaBuena(horas.getValue());
+    }
+    
+    /**
+     * Metodo para dejar la hora en el formato correcto
+     */
+    public void horaBuena(int horaNueva){
+        // Si la hora es menos que 12 tiene que ser A.M.
+        if(horaNueva<12){
+            // Fijamos la nueva hora
+            horas.setValue(horaNueva);
+            // Pondremos nuestra bandera a True, quiere decir que estamos en las primeras 12 horas
+            bandera=true;
+            // Devolvemos la hora con el nuevo formato
+            horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue() +  " A.M.";
+        }
+        else {
+            // Si no la hora tendra que ser las 12 del mediodia con el formato P.M.
+            if(horaNueva==12){
+                // Fijamos la nueva hora
+                horas.setValue(horaNueva);
+                // Pondremos nuestra bandera a False, quiere decir que estamos en las segundas 12 horas
+                bandera=false;
+                // Devolvemos la hora con el nuevo formato
+                horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " P.M.";
+            }
+            else{
+            // Fijamos la hora correspondiente de la tarde
+            horas.setValue(horaNueva-12);
+             // Pondremos nuestra bandera a False, quiere decir que estamos en las segundas 12 horas
+            bandera=false;
+            // Devolvemos la hora con el nuevo formato
+            horaFinal = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " P.M.";
+            }
+        }
     }
 }
