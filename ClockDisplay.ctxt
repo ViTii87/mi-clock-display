@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=ClockDisplay()
-comment0.text=\r\n\ Constructor\ para\ crear\ un\ reloj\ con\ las\ horas\ y\ minutos\ fijadas\ a\ 0\r\n
-comment1.params=hora\ minuto
-comment1.target=ClockDisplay(int,\ int)
+comment0.params=format
+comment0.target=ClockDisplay(boolean)
+comment0.text=\r\n\ Constructor\ para\ crear\ un\ reloj\ con\ las\ horas\ y\ minutos\ fijadas\ a\ 0,\ le\ pasaremos\ un\ booleano\ como\ parametro,\ si\ es\ TRUE\ representamos\r\n\ la\ hora\ en\ el\ formato\ de\ 12\ horas,\ si\ es\ false\ en\ el\ de\ 24\r\n
+comment1.params=hora\ minuto\ format
+comment1.target=ClockDisplay(int,\ int,\ boolean)
 comment1.text=\r\n\ Constructor\ que\ crea\ un\ reloj\ con\ las\ horas\ y\ minutos\ pasados\ como\ parametros\r\n
 comment2.params=horaNueva\ minutoNuevo
 comment2.target=void\ setTime(int,\ int)
